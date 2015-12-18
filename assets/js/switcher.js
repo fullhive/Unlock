@@ -1,0 +1,16 @@
+$(document).ready(function(){
+    $('section').toggle();
+    $('body').append("<style>.template-menu a,.template-menu li{text-decoration:none;text-transform:uppercase;display:block;width:100%}#switcher,section{position:absolute}.template-menu{list-style:none;line-height:30px;margin:auto;padding-left:0;min-width:240px}.template-menu .fa{min-width:30px}.template-menu a{color:#ccc}.template-menu a:hover{margin-left:1px;color:#fff}.template-menu li{margin-bottom:5px;padding-left:40px;color:#ccc}.template-menu .menu-header{padding-top:40px;color:#aaa}.template-info{font-size:14px;font-weight:300;padding:40px}section{padding-right:10px;width:300px;right:-300px;top:0;background-color:#001;padding-top:80px;box-sizing:border-box;z-index:99;height:100%;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}section.active{right:0}#switcher{font-family:Lato,sans-serif;font-weight:300;font-size:18px;cursor:pointer;color:#bbb;right:15px;height:30px;top:15px;z-index:101}.scheme{min-width:200px}</style><div id='switcher'><i class='fa fa-info-circle fa-2x'></i></div><section><ul class='template-menu'><li><small>Template Links</small></li><li><a href='single-sign-in.html'><i class='fa fa-angle-right'></i>Single Sign In</a></li><li><a href='dual-sign-in.html'><i class='fa fa-angle-double-right'></i>Dual Sign In</a></li><li><a href='register.html'><i class='fa fa-user-plus'></i>Register</a></li><li><a href='lock-screen.html'><i class='fa fa-hourglass-2'></i>Lock Screen</a></li><li><a href='forget-password.html'><i class='fa fa-exclamation-triangle'></i>Forget Password?</a></li><li><a href='assets/ajax/users.js' target='_blank'><i class='fa fa-eye'></i>users.js<small> (ajax)</small></a><li><a href='docs.html' target='_blank'><i class='fa fa-question-circle'></i>Documentation</a></li><li class='menu-header'><small>Template Options</small></li><li><button class='btn btn-sm scheme btn-default' data-gotocolor='default'>Default</button></li><li><button class='btn btn-sm scheme btn-primary' data-gotocolor='primary'>Primary</button></li><li><button class='btn btn-sm scheme btn-info' data-gotocolor='info'>Info</button></li><li><button class='btn btn-sm scheme btn-success' data-gotocolor='success'>Success</button></li><li><button class='btn btn-sm scheme btn-warning' data-gotocolor='warning'>Warning</button></li><li><button class='btn btn-sm scheme btn-danger' data-gotocolor='danger'>Danger</button></li></ul></section>");
+    $('#switcher').click(function(event) {
+        $('section').toggleClass('active');
+    });
+        $('.scheme').click( function() {
+            var gotocolor = $(this).data("gotocolor");
+            var coloroptions = ["default","primary","info","success","warning","danger"];
+            $.each( coloroptions, function( i, l ){
+                $('.bg-'+l).removeClass('bg-'+l).addClass('bg-'+gotocolor);
+                $('.btn-'+l).not('.scheme').removeClass('btn-'+l).addClass('btn-'+gotocolor);
+            });
+            return false;
+        });
+});

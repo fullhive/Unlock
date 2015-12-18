@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unlock : Documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon-180x180.png" />
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/docs.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-fixed-top bg-info">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <img alt="Brand" src="assets/img/logo.png" width="60"> Unlock Documentation
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 sidebar m20">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#Info">General Info</a></li>
+                <li class="list-group-item"><a href="#Pages">Pages</a></li>
+                <li class="list-group-item"><a href="#CSS">CSS</a></li>
+                <li class="list-group-item"><a href="#JavaaScript">JavaScript</a></li>
+                <li class="list-group-item"><a href="#Plugins">Plugins</a></li>
+                <li class="list-group-item"><a href="#Usage">Usage</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-10">
+
+            <article class="p10" id="Info">
+                <h3>General Info</h3>
+                <p>
+                    Unlock is a sign in template utilizing BootStrap for the design elements, along with a heavy emphasis on jQuery to access user data through ajax calls.
+                </p>
+            </article>
+
+            <article class="p10" id="Pages">
+                <h3>Pages</h3>
+                <p>
+                    Unlock has five core pages:
+                </p>
+                <strong>Single Sign In</strong>
+                <p>
+                    Single Sign In is a straightforward email + password sign in page. 
+                </p>
+                <strong>Dual Sign In</strong>
+                <p>
+                    Dual Sign In starts with a traditional sign in and then requires users to verify a 4-digit pin number before sign in is complete. 
+                </p>
+                <strong>Register</strong>
+                <p>
+                    Register has 4 sections of a wizard that requires the user to input their personal information, password, and 4-digit pin number. The email is checked against existing users, utilizing ajax, before allowing registration to continue. 
+                </p>
+                <strong>Lock Screen</strong>
+                <p>
+                    Lock Screen has a full page overlay that will fade when clicked. Afterwards, the user that is signed in has to verify their 4-digit pin to continue.
+                </p>
+                <strong>Forget Password?</strong>
+                <p>
+                    Forget Password? requires the user to input their email and verify their 4-digit pin before taking action (password reset, email, etc.) 
+                </p>
+            </article>
+
+            <article class="p10" id="CSS">
+                <h3>CSS</h3>
+                <strong>Fonts</strong>
+                <p>
+                    Unlock uses Lato from Google Fonts as the primary font throughout the template.
+                </p>
+                <p>
+                    <code>@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);</code>
+                </p>
+                <strong>Background</strong>
+                <p>
+                    The sidebar and buttons can be styled using a markup of the BootStrap-Theme stylesheet.
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item bg bg-default">Default ( .bg-default )</li>
+                    <li class="list-group-item bg bg-primary">Primary ( .bg-primary )</li>
+                    <li class="list-group-item bg bg-info">Info ( .bg-info )</li>
+                    <li class="list-group-item bg bg-success">Success ( .bg-success )</li>
+                    <li class="list-group-item bg bg-warning">Warning ( .bg-warning )</li>
+                    <li class="list-group-item bg bg-danger">Danger ( .bg-danger )</li>
+                </ul>
+            </article>
+
+            <article class="p10" id="JavaScript">
+                <h3>JavaScript</h3>
+                <p>
+                    jQuery is used extensively throughout the Unlock template. Each page links to its own .js file within assets/js. Ajax functions are called using a Get request and passing variables through the data option. For demo purposes, all user data is stored in users.js within the assets/ajax folder, and user authentication is performed after pulling in the $Users variable from ajax. 
+                </p>
+            </article>
+
+            <article class="p10" id="Plugins">
+                <h3>Plugins</h3>
+                <p>
+                    Unlock uses the following libraries & plugins:
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item">BootStrap</li>
+                    <li class="list-group-item">jQuery</li>
+                    <li class="list-group-item">Font-Awesome</li>
+                    <li class="list-group-item">Animate.css</li>
+                    <li class="list-group-item">Wow</li>
+                    <li class="list-group-item">formValidation.io (fully-licensed, not redistributable)</li>
+                </ul>
+            </article>
+
+            <article class="p10" id="Usage">
+                <h3>Usage</h3>
+                <p>
+                    Unlock is the intellectual property of Full Hive and may not be used without written permission from Full Hive. For questions, please contact through <a href="http://www.twitter.com/fullhiver"><i class="fa fa-twitter fa-2x"></i></a>. 
+                </p>
+            </article>
+
+    
+
+
+        </div>
+    </div>
+</div>  
+
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <small>Licensed MIT&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.twitter.com/fullhiver"><i class="fa fa-twitter fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/fullhive/Unlock"><i class="fa fa-github fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.fullhive.com">Full Hive</a></small>
+    </footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unlock : Sign In Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Unlock is a sign in template utilizing BootStrap for the design elements, along with a heavy emphasis on jQuery to access user data through ajax calls.">
+<meta name="keywords" content="Unlock, jQuery, BootStrap"/>
+<meta name="title" content="Unlock">
+<meta http-equiv="Content-Language" content="en" />
+<meta name="author" content="Full Hive"/>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon-180x180.png" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">    
+
+            <div class="col-xs-12 col-sm-10 col-lg-8 col-sm-offset-1 col-lg-offset-2 text-center">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <img src="assets/img/logo.png" class="wow zoomIn" data-wow-delay=".2s">
+                    <p class="padding-top-20">For demo purposes, all data is imported from <a href="assets/ajax/users.js" class="text-danger" target="blank">users.js</a> via an Ajax Get request. You can open <a href="assets/ajax/users.js" class="text-danger" target="blank">users.js</a> in a new tab to view emails, passwords, and pins.</p>
+                </div>
+            </div> <!-- / text-center -->
+
+            <!-- Messages -->
+            <div id="Messages" class="col-xs-12 text-center text-default">
+                <p><a href="single-sign-in.html">Single Sign In</a></p>
+                <p><a href="dual-sign-in.html">Dual Sign In</a></p>
+                <p><a href="register.html">Register</a></p>
+                <p><a href="lock-screen.html">Lock Screen</a></p>
+                <p><a href="forget-password.html">Forget Password?</a></p>
+            </div>
+
+    </div> <!-- / container -->
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <small>Licensed MIT&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.twitter.com/fullhiver"><i class="fa fa-twitter fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/fullhive/Unlock"><i class="fa fa-github fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.fullhive.com">Full Hive</a></small>
+    </footer>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/switcher.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    new WOW().init();
+});
+</script>
+
+</body>
+</html>

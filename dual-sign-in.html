@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unlock : Dual Sign In</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Unlock is a sign in template utilizing BootStrap for the design elements, along with a heavy emphasis on jQuery to access user data through ajax calls.">
+<meta name="keywords" content="Unlock, jQuery, BootStrap"/>
+<meta name="title" content="Unlock">
+<meta http-equiv="Content-Language" content="en" />
+<meta name="author" content="Full Hive"/>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico?ver=1" type="image/x-icon" />
+<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon-180x180.png" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet" href="assets/css/formValidation.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Toggle Sidebar -->
+    <div id="sidebar-toggle-button"><i class="fa fa-navicon"></i>&nbsp;&nbsp;&nbsp;Options</div> <!-- / menu button -->
+
+    <!-- Off-Canvas Sidebar -->
+    <nav class="bg-info">
+        <ul class="menu">
+            <li><a href="#" id="Remember-Me"><i class='fa fa-user-secret'></i>Remember Me</a></li>
+            <li><a href="forget-password.html"><i class='fa fa-exclamation-triangle'></i>Forget Password?</a></li>
+            <li><a href="register.html"><i class='fa fa-user-plus'></i>Register</a></li>
+            <li class="menu-header"><small>Sign In With</small></li>
+            <li><a href="#"><i class='fa fa-facebook'></i>Facebook</a></li>
+            <li><a href="#"><i class='fa fa-google'></i>Google</a></li>
+        </ul>
+    </nav> <!-- / sidebar menu -->
+
+    <!-- Main Container -->
+    <div class="container">    
+
+        <!-- Sign In Form -->
+        <div class="row formRow">
+
+            <div class="col-xs-12 col-sm-10 col-lg-8 col-sm-offset-1 col-lg-offset-2 text-center">
+
+                <div class="col-sm-8 col-sm-offset-2"><img src="assets/img/logo.png" class="wow zoomIn" data-wow-delay=".8s"></div>
+
+                <form id="SignInForm" class="form-horizontal BootStrapValidate" method="post" data-fv-framework="bootstrap" data-fv-message="This value is not valid" data-fv-icon-valid="glyphicon glyphicon-ok" data-fv-icon-invalid="glyphicon glyphicon-remove" data-fv-icon-validating="glyphicon glyphicon-refresh">
+                          
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input type="email" id="email" class="form-control wow fadeInUp" data-wow-delay=".2s" name="email" placeholder="Email" data-fv-notempty="true" data-fv-notempty-message="<i class='fa fa-envelope-o'></i>&nbsp;&nbsp;&nbsp;Email is required and cannot be empty." data-fv-emailaddress-message="<i class='fa fa-envelope-o'></i>&nbsp;&nbsp;&nbsp;Not a valid email address." />
+                        </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input name="password" id="password" type="password" placeholder="Password" class="form-control wow fadeInUp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" data-fv-regexp-message="<i class='fa fa-lock'></i>&nbsp;&nbsp;&nbsp;Must contain at least one uppercase and lowercase letter, one number or special character, with at least 8 or more characters." data-wow-delay=".4s" data-fv-notempty="true" data-fv-notempty-message="<i class='fa fa-lock'></i>&nbsp;&nbsp;&nbsp;A password is required.">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2 text-justify">
+                            <button type="submit" id="btn-login" href="#" class="btn btn-info btn-lg col-xs-12 wow fadeInUp" data-wow-delay=".6s"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;&nbsp;Continue</button>
+                        </div>
+                    </div>
+
+                </form> 
+
+            </div> 
+
+        </div> <!-- / formRow -->
+
+        <!-- PIN Verification -->
+        <div class="row padRow hideME">
+
+            <div class="col-xs-12 col-sm-10 col-lg-8 col-sm-offset-1 col-lg-offset-2 text-center">
+
+                <div class="col-sm-8 col-sm-offset-2"><img src="assets/img/logo.png" class="wow zoomIn" data-wow-delay=".8s"></div>  
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="innerPad wow zoomInDown" data-wow-delay=".1s" data-whichnum="1"></div>
+                        <div class="innerPad wow zoomInDown" data-wow-delay=".1s" data-whichnum="2"></div>
+                        <div class="innerPad wow zoomInDown" data-wow-delay=".1s" data-whichnum="3"></div>
+                    </div>
+                </div> 
+                <div class="row">  
+                    <div class="col-sm-8 col-sm-offset-2">    
+                        <div class="innerPad wow zoomInLeft" data-wow-delay=".2s" data-whichnum="4"></div>
+                        <div class="innerPad wow zoomIn" data-wow-delay=".2s" data-whichnum="5"></div>
+                        <div class="innerPad wow zoomInRight" data-wow-delay=".2s" data-whichnum="6"></div>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="innerPad wow zoomInUp" data-wow-delay=".3s" data-whichnum="7"></div>
+                        <div class="innerPad wow zoomInUp" data-wow-delay=".3s" data-whichnum="8"></div>
+                        <div class="innerPad wow zoomInUp" data-wow-delay=".3s" data-whichnum="9"></div>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-sm-8 col-sm-offset-2">
+                        <span class=""><a href="#" class="registerButtons wow zoomIn" data-wow-delay=".8s">Reset</a></span>
+                    </div>
+                </div>
+            </div> 
+
+        </div> <!-- / padRow -->
+
+        <!-- Messages -->
+        <div id="Messages" class="col-xs-12 col-sm-10 col-lg-8 col-sm-offset-1 col-lg-offset-2 text-center">
+            <p class="text-info">Please Sign In</p>
+        </div>
+
+    </div> <!-- / container -->
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <small>Licensed MIT&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.twitter.com/fullhiver"><i class="fa fa-twitter fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/fullhive/Unlock"><i class="fa fa-github fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.fullhive.com">Full Hive</a></small>
+    </footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/formValidation.popular.min.js"></script>
+<script src="assets/js/framework/bootstrap.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/dual-sign-in.js"></script>
+<script src="assets/js/switcher.js"></script>
+
+</body>
+</html>
